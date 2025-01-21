@@ -1,0 +1,68 @@
+/* Full-Page Background */
+body {
+    background: url(/images/fb.jpg) center center / cover no-repeat;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Background Overlay */
+.imagebg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Darkened overlay */
+    opacity: 0.6;
+    z-index: -1; /* Ensure content stays above */
+    filter: blur(8px); /* Added blur for a soft effect */
+}
+
+/* Form Container Styling */
+.form-container {
+    background-color: #fff;
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.14), 0 20px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    width: 80%;
+    max-width: 500px; /* Max width for responsiveness */
+    margin: 70px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Form Container Hover Effect */
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Link Styling */
+.btn a {
+    text-decoration: none;
+    color: #ff7200; /* Highlight button color */
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover Effect */
+.btn a:hover {
+    color: #ffcc00; /* Lighter shade on hover */
+    transform: scale(1.1);
+}
+
+/* Responsiveness for Smaller Screens */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .btn a {
+        font-size: 16px;
+    }
+}

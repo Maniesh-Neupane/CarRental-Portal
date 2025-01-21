@@ -1,0 +1,152 @@
+/* General body styling */
+body {
+    width: 90%;
+    height: 95vh;
+    background-image: url("../images/adminbg2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+/* Styling for the form container */
+.form {
+    width: 350px;
+    height: 450px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.9) 100%);
+    position: relative;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+
+/* Header styling */
+.form h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #ffcc00;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 12px;
+}
+
+/* Input field styling */
+.form input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffcc00;
+    color: #fff;
+    font-size: 16px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect for input fields */
+.form input:focus {
+    outline: none;
+    border-bottom: 2px solid #ff7200;
+    box-shadow: 0 0 10px rgba(255, 114, 0, 0.5);
+}
+
+/* Placeholder text styling */
+::placeholder {
+    color: #b0b0b0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Button styling */
+.btnn {
+    width: 100%;
+    height: 45px;
+    background: #ff7200;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+.btnn:hover {
+    background: #fff;
+    color: #ff7200;
+    box-shadow: 0 4px 12px rgba(255, 114, 0, 0.6);
+}
+
+/* Button link inside */
+.btnn a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Link section styling */
+.form .link {
+    font-size: 16px;
+    padding-top: 20px;
+    text-align: center;
+    color: #b0b0b0;
+}
+
+.form .link a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.form .link a:hover {
+    color: #ff7200;
+}
+
+/* Hello admin section */
+.helloadmin {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.helloadmin h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Back button styling */
+.back {
+    width: 160px;
+    height: 45px;
+    background: #ff7200;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 1300px;
+    transition: background 0.3s ease;
+}
+
+.back:hover {
+    background: #fff;
+    color: #ff7200;
+}
+
+.back a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}

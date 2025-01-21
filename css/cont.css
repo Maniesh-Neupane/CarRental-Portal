@@ -1,0 +1,226 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* General Contact Section Styling */
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../images/contactuspage.webp");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Content Area Styling */
+.contact .content {
+    max-width: 800px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact .content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: #ffcc00;
+    margin-top: -50px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.contact .content p {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ddd;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+/* Contact Info Container */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+
+/* Contact Info Styling */
+.container .contactInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .contactInfo .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    margin-left: 200px;
+    margin-top: -5px;
+    transition: transform 0.3s ease;
+}
+
+.container .contactInfo .box:hover {
+    transform: translateX(10px);
+}
+
+.container .contactInfo .box .icon {
+    min-width: 60px;
+    height: 60px;
+    background: #ff7200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(255, 114, 0, 0.6);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.container .contactInfo .box:hover .icon {
+    background: #ffcc00;
+    transform: scale(1.1);
+}
+
+.container .contactInfo .box .text {
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    margin-top: 5px;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.container .contactInfo .box .text h3 {
+    font-weight: 600;
+    color: #fff;
+}
+
+.container .contactInfo .box .text p {
+    font-weight: 600;
+    color: #ff7200;
+}
+
+/* Contact Form Styling */
+.contactForm {
+    width: 40%;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-left: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.contactForm:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contactForm h2 {
+    font-size: 30px;
+    color: #ff7200;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input and Textarea Box Styling */
+.contactForm .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for Inputs and Textareas */
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    margin: 15px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    background: transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactForm .inputBox input:focus,
+.contactForm .inputBox textarea:focus {
+    border-bottom: 2px solid #ff7200;
+    box-shadow: 0 0 8px rgba(255, 114, 0, 0.6);
+}
+
+.contactForm .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span {
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+/* Submit Button Styling */
+.contactForm .inputBox input[type="submit"] {
+    width: 100%;
+    background: #ff7200;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contactForm .inputBox input[type="submit"]:hover {
+    background: #fff;
+    color: #ff7200;
+    transform: translateY(-5px);
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+    .container .contactInfo .box {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .contactForm {
+        width: 80%;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .contact .content h1 {
+        font-size: 28px;
+    }
+
+    .contact .content p {
+        font-size: 18px;
+    }
+}

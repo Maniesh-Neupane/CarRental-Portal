@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> | About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            display: grid;
+            background-color: #4158D0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+            align-content: center;
+            min-height: 100vh;
+            padding-bottom: 80px; /* Ensure space for footer */
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 70vh;
+            width: 75vw;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 12px;
+        }
+
+        .image {
+            background-color: #12192c;
+            display: flex;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .image img {
+            height: 50vh;
+            margin: 50px auto;
+        }
+
+        .content {
+            background-color: #12192c;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 0 12px 12px 0;
+            color: #fff;
+        }
+
+        .content h2 {
+            text-transform: uppercase;
+            font-size: 36px;
+            letter-spacing: 6px;
+            opacity: 0.9;
+        }
+
+        .content span {
+            height: 0.5px;
+            width: 80px;
+            background: #777;
+            margin: 30px 0;
+        }
+
+        .content p {
+            padding-bottom: 15px;
+            font-weight: 300;
+            opacity: 0.7;
+            width: 60%;
+            text-align: center;
+            margin: 0 auto;
+            line-height: 1.7;
+            color: #ffffff;
+        }
+
+        .credit {
+            text-align: center;
+            color: #000;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 40px;
+        }
+
+        .credit a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #000;
+            margin: 0 15px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #C850C0;
+        }
+
+        @media(max-width: 900px) {
+            section {
+                grid-template-columns: 1fr;
+                width: 100%;
+                border-radius: none;
+            }
+
+            .image {
+                height: 100vh;
+                border-radius: none;
+            }
+
+            .content {
+                height: 100vh;
+                border-radius: none;
+            }
+
+            .content h2 {
+                font-size: 20px;
+                margin-top: 50px;
+            }
+
+            .content span {
+                margin: 20px 0;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+            .footer-links a {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <section>
+        <div class="image">
+            <img src="https://cdn.pixabay.com/photo/2017/08/26/23/37/business-2684758__340.png" alt="About Us Image">
+        </div>
+
+        <div class="content">
+            <h2>About Us</h2>
+            <span><!-- line here --></span>
+            <p>We started this Service For the People to Rent The Cars!</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>Created by Manish Neupane (Maniesh Neupane) aka Pwn4arn for BCA 4th Sem Project.</p>
+
+        <div class="footer-links">
+            <!-- Social Media Names in Footer -->
+            <a href="https://github.com/Maniesh-Neupane" target="_blank">GitHub</a>
+            <a href="https://x.com/pwn4arn" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/in/manish-neupane-832297260" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</body>
+</html>

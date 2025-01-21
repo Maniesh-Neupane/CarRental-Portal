@@ -19,7 +19,7 @@ Installation Process
      git clone https://github.com/Maniesh-Neupane/CarRental-Portal.git
 
 3. Move the Project Files
-   - Copy or move the project files into the htdocs folder inside the XAMPP installation directory (e.g., xampp/htdocs/).
+   - Copy or move the project files into the htdocs folder inside the XAMPP installation directory ( e.g., xampp/htdocs/ ).
 
 4. Start Apache and MySQL
    - Open XAMPP and start the Apache and MySQL 
@@ -50,7 +50,7 @@ Admin Dashboard
 
 ![image alt](https://github.com/Maniesh-Neupane/CarRental-Portal/blob/master/adminuser.png?raw=true)
 
-live on https://carbca.infy.uk/
+
 
 
  

@@ -11,17 +11,18 @@ This Project is Deployed Live on   https://carbca.infy.uk/
 Installation Process
 
 1. Install XAMPP or WAMP
-   Download and install XAMPP or WAMP on your system. These tools will provide the necessary Apache server and MySQL database.
+   Download and install XAMPP or WAMP.
 
 2. Download the Project
    - Download the zip file of the project or clone the repository using the following command:
+   - 
      git clone https://github.com/Maniesh-Neupane/CarRental-Portal.git
 
 3. Move the Project Files
    - Copy or move the project files into the htdocs folder inside the XAMPP installation directory (e.g., xampp/htdocs/).
 
 4. Start Apache and MySQL
-   - Open XAMPP and start the Apache and MySQL modules.
+   - Open XAMPP and start the Apache and MySQL 
 
 5. Setup the Database
    - Open your browser and go to http://localhost/phpmyadmin.

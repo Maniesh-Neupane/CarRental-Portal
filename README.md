@@ -11,8 +11,7 @@ This Project is Deployed Live on   https://carbca.infy.uk/
 Installation Process
 
 1. Install XAMPP or WAMP
-   Download and install XAMPP or WAMP.
-
+   
 2. Download the Project
    - Download the zip file of the project or clone the repository using the following command:
    - 

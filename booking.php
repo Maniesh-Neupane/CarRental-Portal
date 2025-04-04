@@ -9,13 +9,13 @@
         exit();
     }
 
-    // Get the car ID and details
+    // Get the car ID and detail
     $carid = $_GET['id'];
     $sql = "SELECT * FROM cars WHERE CAR_ID='$carid'";
     $cname = mysqli_query($con, $sql);
     $email = mysqli_fetch_assoc($cname);
     
-    // Get the user details
+    // Get the user detail
     $value = $_SESSION['email'];
     $sql = "SELECT * FROM users WHERE EMAIL='$value'";
     $name = mysqli_query($con, $sql);
@@ -73,6 +73,7 @@
 <body background="images/bg.jpg">
 
 <style>
+    
     /* CSS remains unchanged */
     * {
         margin: 0;

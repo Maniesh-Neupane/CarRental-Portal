@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+// Redirect to login page if user is not logged in
+if (!isset($_SESSION['admin_logged_in'])) {
+    header('Location: index.php');
+    exit();
+}
+
+require_once('connection.php');
+
+$query = "SELECT booking.*, cars.CAR_NAME FROM booking 
+          JOIN cars ON booking.CAR_ID = cars.CAR_ID
+          ORDER BY BOOK_ID DESC";
+$queryy = mysqli_query($con, $query);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,16 +23,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Bookings</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
 
         .hai {
             width: 100%;
@@ -49,9 +57,7 @@
             padding: 0;
         }
 
-        .menu li {
-            list-style: none;
-        }
+        .menu li { list-style: none; }
 
         .menu li a {
             text-decoration: none;
@@ -62,8 +68,7 @@
             transition: color 0.3s ease;
         }
 
-        .menu li a:hover,
-        .menu li a.active {
+        .menu li a:hover, .menu li a.active {
             color: #ff7200;
             background-color: #005bb5;
             border-radius: 5px;
@@ -143,14 +148,6 @@
 </head>
 <body>
 
-<?php
-require_once('connection.php');
-$query = "SELECT booking.*, cars.CAR_NAME FROM booking 
-          JOIN cars ON booking.CAR_ID = cars.CAR_ID
-          ORDER BY BOOK_ID DESC";
-$queryy = mysqli_query($con, $query);
-?>
-
 <div class="hai">
     <div class="navbar">
         <div class="menu">
@@ -162,7 +159,7 @@ $queryy = mysqli_query($con, $query);
             </ul>
         </div>
         <div class="logout-btn-container">
-            <button class="logout-btn"><a href="index.php" style="color: white; text-decoration: none;">LOGOUT</a></button>
+            <button class="logout-btn"><a href="logout.php" style="color: white; text-decoration: none;">LOGOUT</a></button>
         </div>
     </div>
 
@@ -186,8 +183,7 @@ $queryy = mysqli_query($con, $query);
                 </tr>
             </thead>
             <tbody>
-                <?php
-                while ($res = mysqli_fetch_array($queryy)) { ?>
+                <?php while ($res = mysqli_fetch_array($queryy)) { ?>
                     <tr>
                         <td><?php echo $res['CAR_NAME']; ?></td>
                         <td><?php echo $res['EMAIL']; ?></td>
@@ -202,7 +198,9 @@ $queryy = mysqli_query($con, $query);
                             <a class="action-link" href="approve.php?id=<?php echo $res['BOOK_ID']; ?>">Approve</a> /
                             <a class="action-link" href="deny.php?id=<?php echo $res['BOOK_ID']; ?>">Deny</a>
                         </td>
-                        <td><a class="action-link" href="adminreturn.php?id=<?php echo $res['CAR_ID']; ?>&bookid=<?php echo $res['BOOK_ID']; ?>">Returned</a></td>
+                        <td>
+                            <a class="action-link" href="adminreturn.php?id=<?php echo $res['CAR_ID']; ?>&bookid=<?php echo $res['BOOK_ID']; ?>">Returned</a>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -211,7 +209,7 @@ $queryy = mysqli_query($con, $query);
 </div>
 
 <script>
-    // Add active class to clicked menu item
+    // Highlight active nav
     const menuLinks = document.querySelectorAll('.nav-link');
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {

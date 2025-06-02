@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+// Redirect to login page if user is not logged in
+if (!isset($_SESSION['admin_logged_in'])) {
+    header('Location: index.php');
+    exit();
+}
+
+require_once('connection.php');
+$query = "SELECT * FROM users";
+$queryy = mysqli_query($con, $query);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,22 +42,22 @@
         .navbar {
             width: 100%;
             padding: 10px 50px;
-            background-color: #0066cc; /* Blue background for navbar */
+            background-color: #0066cc;
             display: flex;
-            justify-content: space-between; /* Space between menu items and logout */
+            justify-content: space-between;
             align-items: center;
         }
 
         .menu {
             display: flex;
-            justify-content: space-evenly; /* Distribute menu items evenly */
-            flex: 1; /* Allow the menu to take all available space */
+            justify-content: space-evenly;
+            flex: 1;
         }
 
         .menu ul {
             display: flex;
-            width: 100%; /* Ensure the menu spans the full width */
-            justify-content: space-between; /* Spread the items evenly across the width */
+            width: 100%;
+            justify-content: space-between;
             list-style: none;
             padding: 0;
         }
@@ -58,24 +71,24 @@
             color: white;
             font-weight: bold;
             font-size: 18px;
-            padding: 10px 30px; /* Add padding for spacing between the links */
+            padding: 10px 30px;
             transition: color 0.3s ease;
         }
 
         .menu li a:hover,
         .menu li a.active {
             color: #ff7200;
-            background-color: #005bb5; /* Darker blue on hover */
+            background-color: #005bb5;
             border-radius: 5px;
         }
 
         .logout-btn-container {
-            margin-left: 40px; /* Adds more space between the menu items and the logout button */
+            margin-left: 40px;
         }
 
         .logout-btn {
             padding: 10px 20px;
-            background-color:rgb(25, 15, 25);
+            background-color: rgb(25, 15, 25);
             border: none;
             border-radius: 10px;
             color: white;
@@ -130,7 +143,7 @@
 
         .delete-btn {
             padding: 8px 15px;
-            background-color:rgb(255, 170, 0); /* Simpler delete button color */
+            background-color: rgb(255, 170, 0);
             border: none;
             color: white;
             font-weight: bold;
@@ -146,12 +159,6 @@
 </head>
 <body>
 
-<?php
-require_once('connection.php');
-$query = "SELECT * FROM users";
-$queryy = mysqli_query($con, $query);
-?>
-
 <div class="hai">
     <div class="navbar">
         <div class="menu">
@@ -163,8 +170,7 @@ $queryy = mysqli_query($con, $query);
             </ul>
         </div>
         <div class="logout-btn-container">
-            <!-- Logout button with space to the right -->
-            <button class="logout-btn"><a href="index.php" style="color: white; text-decoration: none;">LOGOUT</a></button>
+            <button class="logout-btn"><a href="logout.php" style="color: white; text-decoration: none;">LOGOUT</a></button>
         </div>
     </div>
 
@@ -174,25 +180,27 @@ $queryy = mysqli_query($con, $query);
         <table class="content-table">
             <thead>
                 <tr>
-                    <th>NAME</th> 
+                    <th>NAME</th>
                     <th>EMAIL</th>
                     <th>LICENSE NUMBER</th>
-                    <th>PHONE NUMBER</th> 
-                    <th>GENDER</th> 
+                    <th>PHONE NUMBER</th>
+                    <th>GENDER</th>
                     <th>DELETE USER</th>
                 </tr>
             </thead>
             <tbody>
-                <?php
-                while ($res = mysqli_fetch_array($queryy)) {
-                ?>
+                <?php while ($res = mysqli_fetch_array($queryy)) { ?>
                 <tr>
                     <td><?php echo $res['FNAME'] . " " . $res['LNAME']; ?></td>
                     <td><?php echo $res['EMAIL']; ?></td>
                     <td><?php echo $res['LIC_NUM']; ?></td>
                     <td><?php echo $res['PHONE_NUMBER']; ?></td>
                     <td><?php echo $res['GENDER']; ?></td>
-                    <td><button class="delete-btn"><a href="deleteuser.php?id=<?php echo $res['EMAIL'] ?>" style="color: white; text-decoration: none;">DELETE USER</a></button></td>
+                    <td>
+                        <button class="delete-btn">
+                            <a href="deleteuser.php?id=<?php echo $res['EMAIL']; ?>" style="color: white; text-decoration: none;">DELETE USER</a>
+                        </button>
+                    </td>
                 </tr>
                 <?php } ?>
             </tbody>
@@ -201,7 +209,7 @@ $queryy = mysqli_query($con, $query);
 </div>
 
 <script>
-    // Add active class to clicked menu item
+    // Highlight active menu link
     const menuLinks = document.querySelectorAll('.nav-link');
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {

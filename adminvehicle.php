@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if admin is logged in
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header("Location: login.php"); // Redirect to login page
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +16,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADMINISTRATOR</title>
     <style>
-        /* General Reset */
+        /* [YOUR ORIGINAL CSS - UNCHANGED] */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: Arial, sans-serif;
             background: white;
@@ -20,8 +29,6 @@
             background-position: center;
             color: #333;
         }
-
-        /* Navbar Styling */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -32,28 +39,23 @@
             top: 0;
             z-index: 1000;
         }
-
         .menu ul {
             display: flex;
             list-style: none;
         }
-
         .menu ul li {
-            margin: 0 79px; /* Increase the gap between menu items */
+            margin: 0 79px;
         }
-
         .menu ul li a {
             text-decoration: none;
             color: #fff;
             font-weight: bold;
             transition: color 0.3s;
-            padding: 10px 15px; /* Padding for better spacing around text */
+            padding: 10px 15px;
         }
-
         .menu ul li a:hover {
             color: #FFC107;
         }
-
         .nn {
             background: #000;
             border: none;
@@ -64,26 +66,20 @@
             font-weight: bold;
             transition: background 0.3s;
         }
-
         .nn:hover {
             background: #fff;
             color: #007BFF;
         }
-
         .nn a {
             color: inherit;
             text-decoration: none;
         }
-
-        /* Page Header */
         .header {
             text-align: center;
             margin: 20px 0;
             font-size: 32px;
             color: #FFC107;
         }
-
-        /* Add Car Button */
         .add {
             display: block;
             margin: 20px auto;
@@ -100,25 +96,20 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-
         .add a {
             text-decoration: none;
             color: white;
             display: block;
         }
-
         .add:hover {
             background: #E05E00;
         }
-
-        /* Table Styling */
         .table-container {
             overflow-x: auto;
             margin: 20px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
@@ -128,50 +119,39 @@
             border-radius: 10px;
             overflow: hidden;
         }
-
         thead {
             background-color: #ff7200;
             color: white;
         }
-
         th, td {
             text-align: left;
             padding: 12px;
         }
-
         tbody tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-
         tbody tr:nth-child(odd) {
             background-color: #ffffff;
         }
-
         tbody tr:hover {
             background-color: rgba(0, 123, 255, 0.1);
         }
-
         td, th {
             border: 1px solid #ddd;
         }
-
         td a {
             text-decoration: none;
             color: #007BFF;
             font-weight: bold;
         }
-
         td a:hover {
             text-decoration: underline;
         }
-
-        /* Update Price Form */
         .update-price-form {
             display: flex;
             align-items: center;
             gap: 5px;
         }
-
         .update-price-input {
             width: 100px;
             padding: 5px;
@@ -179,7 +159,6 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-
         .update-price-btn {
             padding: 5px 10px;
             background: #007BFF;
@@ -190,15 +169,12 @@
             font-size: 14px;
             transition: background 0.3s;
         }
-
         .update-price-btn:hover {
             background: #0056b3;
         }
-
-        /* Delete Button Styling */
         .delete-btn {
             padding: 5px 10px;
-            background:rgb(34, 189, 255); /* Orange color */
+            background:rgb(34, 189, 255);
             border: none;
             border-radius: 5px;
             color: white;
@@ -206,12 +182,9 @@
             font-size: 14px;
             transition: background 0.3s;
         }
-
         .delete-btn:hover {
-            background:rgb(25, 128, 230); /* Darker orange for hover effect */
+            background:rgb(25, 128, 230);
         }
-
-        /* Delete Button Link */
         .delete-btn a {
             color: white;
             text-decoration: none;
@@ -227,7 +200,11 @@
                 <li><a href="adminusers.php">User Management</a></li>
                 <li><a href="admindash.php">Feedbacks</a></li>
                 <li><a href="adminbook.php">Booking Request</a></li>
-                <li><button class="nn"><a href="index.php">Logout</a></button></li>
+                <li>
+                    <form action="logout.php" method="POST" style="display:inline;">
+                        <button type="submit" class="nn">Logout</button>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>

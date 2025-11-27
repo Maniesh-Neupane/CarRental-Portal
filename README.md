@@ -41,22 +41,39 @@ Installation Process
 Your Car Rental Portal is now ready to use!
 
 
+## B. Docker Installation Guide
+
+If you prefer to run the CarRental-Portal without installing XAMPP/WAMP or manually configuring PHP and MySQL, you can use Docker. The Docker image contains a fully configured environment.
+
+---
+
 B. Docker Installation Guide
+
+If you prefer to run the CarRental-Portal without installing XAMPP/WAMP or manually configuring PHP and MySQL, you can use Docker. The Docker image contains a fully configured environment.
+
+
 
 Step 1: Pull the Docker Image
 
+Download the pre-configured CarRental-Portal image from Docker Hub:
+
     docker pull pwn4arn/carrental-portal-app:v1
- Download the pre-configured CarRental-Portal Docker image from Docker Hub:
+
+
 
 Step 2: Run the Docker Container
+
+Start the application by running the container:
+
     docker run -p 8080:80 pwn4arn/carrental-portal-app:v1
- Start the application by running the container:
 
-   -p 8080:80 maps port 80 inside the container (the web server port) to port 8080 on your computer.
+- The '-p 8080:80' option maps port 80 inside the container (web server) to port 8080 on your computer.
+- Open your browser and visit: http://localhost:8080 to access the CarRental-Portal.
+- If port 8080 is already in use, replace it with another port, for example: -p 3000:80.
 
-   Open your browser and visit http://localhost:8080
 
-   If port 8080 is already in use, you can use another port, e.g., -p 3000:80.
+
+
 
 
 

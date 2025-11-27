@@ -14,8 +14,8 @@ Installation Process
 1. Install XAMPP or WAMP
    
 2. Download the Project
-   - Download the zip file of the project or clone the repository using the following command:
-     -     git clone https://github.com/Maniesh-Neupane/CarRental-Portal.git
+   - Download the zip file of the project or clone the repository using the following command 
+   -       git clone https://github.com/Maniesh-Neupane/CarRental-Portal.git
 
 3. Move the Project Files
    - Copy or move the project files into the htdocs folder inside the XAMPP installation directory ( e.g., xampp/htdocs/ ).
@@ -37,6 +37,8 @@ Installation Process
    - Credentials:
      - Username: Maniesh
      - Password: Maniesh123
+
+       
    - Admin Login Path:
      http://localhost/carrental/adminlogin.php
 

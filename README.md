@@ -55,6 +55,7 @@ Download the pre-configured CarRental-Portal image from Docker Hub:
 
     docker pull pwn4arn/carrental-portal-app:v1
 
+
 Step 2: Run the Docker Container
 
 Start the application by running the container:
@@ -66,6 +67,8 @@ Start the application by running the container:
 - If port 8080 is already in use, replace it with another port, for example: -p 3000:80.
 
 ---
+
+
 
 
 

@@ -38,16 +38,10 @@ Installation Process
    - Admin Login Path:
      http://localhost/carrental/adminlogin.php
 
-Your Car Rental Portal is now ready to use!
+
 
 
 ## B. Docker Installation Guide
-
-If you prefer to run the CarRental-Portal without installing XAMPP/WAMP or manually configuring PHP and MySQL, you can use Docker. The Docker image contains a fully configured environment.
-
----
-
-B. Docker Installation Guide
 
 If you prefer to run the CarRental-Portal without installing XAMPP/WAMP or manually configuring PHP and MySQL, you can use Docker. The Docker image contains a fully configured environment.
 

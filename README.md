@@ -9,13 +9,13 @@ This Project is Deployed Live on   https://carbca.infy.uk
 
 
 Installation Process
+ ----
 
 1. Install XAMPP or WAMP
    
 2. Download the Project
    - Download the zip file of the project or clone the repository using the following command:
-   - 
-   git clone https://github.com/Maniesh-Neupane/CarRental-Portal.git
+     -     git clone https://github.com/Maniesh-Neupane/CarRental-Portal.git
 
 3. Move the Project Files
    - Copy or move the project files into the htdocs folder inside the XAMPP installation directory ( e.g., xampp/htdocs/ ).
@@ -24,12 +24,14 @@ Installation Process
    - Open XAMPP and start the Apache and MySQL 
 
 5. Setup the Database
-   - Open your browser and go to http://localhost/phpmyadmin.
+   - Open your browser and go to
+   -      http://localhost/phpmyadmin.
    - Create a new database named carproject.
    - Import the carproject.sql file into the carproject database.
 
 6. Run the Application
-   - Open your browser and go to http://localhost/carrental to access the project.
+   - Open your browser and go to
+    http://localhost/carrental to access the project.
 
 7. Admin Dashboard
    - Credentials:
@@ -64,6 +66,8 @@ Start the application by running the container:
 - The '-p 8080:80' option maps port 80 inside the container (web server) to port 8080 on your computer.
 - Open your browser and visit: http://localhost:8080 to access the CarRental-Portal.
 - If port 8080 is already in use, replace it with another port, for example: -p 3000:80.
+
+
 
 
 

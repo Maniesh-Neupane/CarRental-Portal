@@ -43,15 +43,21 @@ Your Car Rental Portal is now ready to use!
 
 B. Docker Installation Guide
 
-Step 1: Pull the Docker Image docker pull pwn4arn/carrental-portal-app:v1
+Step 1: Pull the Docker Image
 
-    Downloads the pre-configured CarRental-Portal image from Docker Hub.
+ docker pull pwn4arn/carrental-portal-app:v1
+ Download the pre-configured CarRental-Portal Docker image from Docker Hub:
 
-Step 2: Run the Docker Container docker run -p 8080:80 pwn4arn/carrental-portal-app:v1
 
-    -p 8080:80 maps container port 80 to local port 8080.
-    Open your browser at http://localhost:8080 to access the application.
-    
+Step 2: Run the Docker Container
+ docker run -p 8080:80 pwn4arn/carrental-portal-app:v1
+ Start the application by running the container:
+
+    -p 8080:80 maps port 80 inside the container (the web server port) to port 8080 on your computer.
+
+    Open your browser and visit: http://localhost:8080
+
+    If port 8080 is already in use, you can use another port, e.g., -p 3000:80.
 
 
 

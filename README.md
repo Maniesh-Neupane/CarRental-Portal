@@ -19,7 +19,7 @@ Installation Process
 2. Download the Project
    - Download the zip file of the project or clone the repository using the following command:
    
-     git clone https://github.com/Maniesh-Neupane/CarRental-Portal.git
+          git clone https://github.com/Maniesh-Neupane/CarRental-Portal.git
 
 3. Move the Project Files
    - Copy or move the project files into the `htdocs` folder inside the XAMPP installation directory (e.g., xampp/htdocs/).
@@ -43,6 +43,7 @@ Installation Process
 
 ---
 
+
 B. Docker Installation Guide
 ----------------------------
 
@@ -65,6 +66,8 @@ Start the application by running the container:
 - If port 8080 is already in use, replace it with another port, for example: -p 3000:80.
 
 ---
+
+
 
 Admin Dashboard
 ---------------
